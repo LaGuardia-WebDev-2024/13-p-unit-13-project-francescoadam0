@@ -1,16 +1,16 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ ⭐ ] Two Interactive Drop-down Inputs 
+[ ⭐ ] Two Different jQuery Animation Methods 
+[ ⭐ ] Add Five CSS Declarations
+[ ⭐ ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
 [ no ] Feature 4 - :hover Feature 
-[ no ] Feature 5 - Add an Additional Interactive Drop-down
+[ ⭐ ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
 <!DOCTYPE html>
@@ -21,37 +21,64 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1> <span id="part1">About</span>  <span id="part2">Francesco's </span> <span id="part3">Lifestyle</span> </h1>
+    
+    <img src ="https://cdn.glitch.global/3ceb0600-307f-4128-8384-e953955aab3c/IMG_1296.jpg?v=1746713608337" width="190">
+    
+    <img src="https://cdn.glitch.global/3ceb0600-307f-4128-8384-e953955aab3c/Francesco%20Adamo%20Headshot.jpg?v=1746713522740" width="250">
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        ☀️ What do I usually do on my weekends?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Playing / Watching Basketball</option>
+          <option value="movie2">Hanging out with my friends </option>
+          <option value="movie3">Dancing / Competing / Performing</option>
+          <option value="movie4">Sleeping and gettign work done if I have</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Weekend Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="movie-result">
+    </div>
+   
+   
+    <img id="dance" src="https://cdn.glitch.global/3ceb0600-307f-4128-8384-e953955aab3c/IMG_1578.JPG?v=1746712743602" height="2">
+      
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        🍽️ What is my favorite food to eat?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Pasta</option>
+          <option value="book2">Sushi</option>
+          <option value="book3">Empanadas</option>
+          <option value="book4">Pancakes and Eggs</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Food Answer</button>
     </form>
     <div id="book-result"></div>
+       <img id= "food" src="https://www.foodandwine.com/thmb/97PY4E6Wk95IYv1_8pDZvBEi0Uw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cream-tomato-rigatoni-FT-RECIPE1020-139fb3fa52574e8bb06f98e7fa3e4f1e.jpg" width="250" style="display: none">
+    
+    <!-- Nationality Question -->
+    <form id="nationality-form">
+      <label>
+        🍽️ What is my main nationality?
+        <select id="nationality-answer">
+          <option value="nationality1">Italian</option>
+          <option value="nationality2">German</option>
+          <option value="nationality3">Greek</option>
+          <option value="nationality4">Spanish</option>
+        </select>
+      </label>
+      <button type="submit">Check Nationality Answer</button>
+    </form>
+    <div id="nationality-result"></div>
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -61,8 +88,10 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
+        if (answer === "movie3") {
           $("#movie-result").text("YESSSS!");
+          $("#dance").fadeIn(2000)
+          .css("height", "300")
         } else {
           $("#movie-result").text("Try Again!");
         }
@@ -77,10 +106,27 @@ Select ONE Additional Feature to Add
 
         if (answer === "book1") {
           $("#book-result").text("YESSSS!");
+          $("#food").slideDown(2000)
         } else {
           $("#book-result").text("Try Again!");
         }
       });
+      
+       //Nationality Question jQuery Code
+      $("#book-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#book-answer");
+        var answer = $answer.val();
+
+        if (answer === "book1") {
+          $("#nationality-result").text("YESSSS!");
+          $("#food").slideDown(2000)
+        } else {
+          $("#nationality-result").text("Try Again!");
+        }
+      });
+      
     </script>
   </body>
 
