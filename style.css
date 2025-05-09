@@ -8,6 +8,15 @@
 }
 
 #book-result {
+  background: rgb(255,255,255);
+  border: 5px solid black;
+  font-size: 24px;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+  
+#nationality-result {
   background: rgb(205, 33, 42);
   border: 5px solid black;
   font-size: 24px;
@@ -15,8 +24,24 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
+  
 hr {
   height: 5px;
   background-color: black;
+}
+
+#part1{
+color: red;   
+}
+
+#part2 {
+  color:white;
+  
+}
+h1{
+  background-color: black
+}
+
+#part3{
+  color: green
 }

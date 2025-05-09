@@ -2,7 +2,7 @@
 Requirements
 [ ⭐ ] Two Interactive Drop-down Inputs 
 [ ⭐ ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
+[ ⭐ ] Add Five CSS Declarations
 [ ⭐ ] Include Three Images
 
 Select ONE Additional Feature to Add  
@@ -10,7 +10,7 @@ Select ONE Additional Feature to Add
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
 [ no ] Feature 4 - :hover Feature 
-[ no ] Feature 5 - Add an Additional Interactive Drop-down
+[ ⭐ ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About Francesco's Lifestyle</h1>
+    <h1> <span id="part1">About</span>  <span id="part2">Francesco's </span> <span id="part3">Lifestyle</span> </h1>
     
     <img src ="https://cdn.glitch.global/3ceb0600-307f-4128-8384-e953955aab3c/IMG_1296.jpg?v=1746713608337" width="190">
     
@@ -63,6 +63,22 @@ Select ONE Additional Feature to Add
     <div id="book-result"></div>
        <img id= "food" src="https://www.foodandwine.com/thmb/97PY4E6Wk95IYv1_8pDZvBEi0Uw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cream-tomato-rigatoni-FT-RECIPE1020-139fb3fa52574e8bb06f98e7fa3e4f1e.jpg" width="250" style="display: none">
     
+    <!-- Nationality Question -->
+    <form id="nationality-form">
+      <label>
+        🍽️ What is my main nationality?
+        <select id="nationality-answer">
+          <option value="nationality1">Italian</option>
+          <option value="nationality2">German</option>
+          <option value="nationality3">Greek</option>
+          <option value="nationality4">Spanish</option>
+        </select>
+      </label>
+      <button type="submit">Check Nationality Answer</button>
+    </form>
+    <div id="nationality-result"></div>
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -95,6 +111,22 @@ Select ONE Additional Feature to Add
           $("#book-result").text("Try Again!");
         }
       });
+      
+       //Nationality Question jQuery Code
+      $("#book-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#book-answer");
+        var answer = $answer.val();
+
+        if (answer === "book1") {
+          $("#nationality-result").text("YESSSS!");
+          $("#food").slideDown(2000)
+        } else {
+          $("#nationality-result").text("Try Again!");
+        }
+      });
+      
     </script>
   </body>
 
